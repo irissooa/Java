@@ -48,6 +48,54 @@
 
 
 
+## 자바의 특징과 객체지향
+
+프로그래밍 언어 자바. 이는 어떤 특징이 있을까?
+
+## 프로그래밍 언어, 자바
+
+------
+
+프로그래밍이란, 컴퓨터에게 일을 시키는 것이다. 이를 위한 언어로는 자바, Python, C 등이 있다. 이러한 언어를 프로그래밍 언어라 한다. 프로그래밍 언어로서의 자바! 어떠한 특징이 있을까?
+![java101-자바 프로그래밍이란](JAVA.assets/DrWwLhc.png)
+
+## 많이 쓰이는 언어
+
+------
+
+자바는 전 세계적으로 많이 사용된다. 널리 사용되는 만큼, 많은 일자리 수요가 있다. 특히 국내의 경우, 큰 규모의 프로젝트일수록 자바를 선호한다. 정부 및 대기업의 웹 프로젝트는 대부분 자바로 진행된다.
+![프로그래밍 언어 순위(출처: TOBIE)](JAVA.assets/n62xvF5.png)
+
+## 멀티 플랫폼 언어
+
+------
+
+자바는 멀티 플랫폼 언어다. 자바로 작성된 코드는 다양한 운영체제(UNIX, Window, MacOS, Android, etc..)에서 변경없이 동작한다. 이러한 특징을 “이식성이 좋다”고 한다.
+![java101-멀티 플랫폼 언어](JAVA.assets/ntu9gER.png)
+
+## 객체 지향 언어
+
+------
+
+자바는 객체 지향 프로그래밍(Object-Oriented Programming) 언어다. 쉽게 말해, 객체를 조립하여 전체 프로그램을 만드는 언어다. 자전거를 전체 프로그램, 각 부품을 객체라고 생각하면 이해가 쉽다.
+![java101-자전거를 닮은 객체지향](JAVA.assets/DXObINy.png)
+
+현대의 모든 프로그래밍 언어는 객체 지향 패러다임을 따른다. 조립식으로 만들어진 프로그램은 여러 장점이 있기 때문이다. 예를 들어 고장이 난 경우, 해당 부품만 갈아주면 된다. 추가로 특정 기능들을 손쉽게 개선 또는 확장할 수 있다.
+
+## 요약
+
+------
+
+![클라우드스터딩-자바-객체지향-특징-요약](JAVA.assets/nyzFpNf.png)
+
+- 프로그래밍 언어는 다양(Java, Python, C, …)하다.
+- 자바의 특징은 아래와 같다.
+  - 수요 많음
+  - 이식성 좋음
+  - 객체 지향(조립식 프로그래밍 가능)
+
+
+
 ## 문법
 
 #### 출력하기
@@ -110,3 +158,81 @@ public class Pizza {
 }
 ```
 
+
+
+### 문자열 변수
+
+```java
+// 문자열(String)을 위한 변수, food 생성
+String food;
+// 변수 food에, “치킨”이라는 값을 저장
+food = "치킨";
+System.out.println(food); // "치킨" 출력
+```
+
+
+
+### 숫자 변수
+
+```java
+// 정수(int)을 위한 변수, midScore 생성
+int midScore;
+// 변수 midScore, 100이라는 값을 저장
+midScore = 100;
+System.out.println(midScore); // 100 출력
+
+// 실수(double) 변수 만들기
+double weight;
+weight = 99.99;
+System.out.println(weight);
+```
+
+
+
+### 논리형 변수(Boolean)
+
+```java
+// 논리형 변수 생성
+boolean isMale;
+
+// 참/거짓 값 대입
+isMale = false;
+
+// 논리형 변수 isMale의 값 출력
+System.out.println(isMale);
+```
+
+
+
+**추가로, 문자열과 변수는 덧셈 연산이 가능하며, 이를 통해 하나의 문자열로 연결할 수 있다**
+
+```java
+System.out.println("가격: " + price + "원");
+// 가격: 35000원
+```
+
+
+
+```java
+/* 1. 클래스 생성 */
+public class Lab02Review {
+    /* 2. 메인 메소드 생성 */
+    public static void main(Strings[] args) {
+        /* 3. 변수 생성 및 초기화(초기값 설정) */
+        String name = "홍팍";
+        int age = 34;
+        double weight = 72.4;
+        boolean isMale = true;
+
+        /* 4. 결과 출력 */
+        System.out.println("이름: " + name);
+        System.out.println("나이: " + age + "세");
+        System.out.println("몸무게: " + weight + "kg");
+        System.out.println("남성인가요? " + isMale);
+    }
+}
+```
+
+
+
+## 변수와 타입, 연산자
