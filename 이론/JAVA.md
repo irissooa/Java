@@ -666,3 +666,200 @@ System.out.println(z); // 16
 - 메소드는 입력에 따른 결과를 반환한다.
 - 메소드는 호출부와 정의부로 나뉜다.
 - 메소드의 구성 요소는 이름 / 입력 변수 / 반환 값 / 반환 타입이다.
+
+
+
+### 단일 파라미터 메소드
+
+> 입력 변수가 하나만 있는 메소드를, 단일 파라미터 메소드라 한다. 여기서 파라미터(parameters)란 입력 변수의 또 다른 표현이다.
+
+```java
+# 단일 파라미터 메소드 호출 예
+int x = square(4); // 입력값: 4 => 반환값: 16
+```
+
+#### 파라미터로의 입력 값 대입
+
+메소드 호출 시 입력한 값은 입력 변수 즉, 파라미터로 대입됩니다.
+
+```java
+// 단일 파라미터 메소드 정의 예
+public static int square(int n) {  
+    int result = n * n; // 변수 생성 및 제곱 값 대입  
+    return result; // 값 반환
+}
+```
+
+### 다중 파라미터 메소드
+
+입력 변수가 2개 이상인 경우, 이를 다중 파라미터 메소드라 한다.
+
+```java
+# 다중 파라미터 메소드 호출 예
+int a = times(3, 4); // 12
+int b = times(5, 6); // 30
+```
+
+#### 파라미터로 입력 값 전달
+
+메소드 호출 시 입력한 값은 차례로 파라미터(입력 변수)에 대입됩니다.
+
+```java
+// 다중 파라미터 메소드 정의 예
+public static int times(int a, int b) {  
+    return a * b;
+}
+```
+
+### 잘못된 파라미터
+
+메소드 호출 시 주의해야할 점이 있다. 이는 입력된 전달과 파라미터(입력 변수)의 타입이 일치해야 한다는 것.
+
+```java
+// 메소드 호출 예
+int x = foo(0.0); // double을 int로 대입 불가
+int y = foo("3"); // String을 int로 대입 불가
+// 메소드 정의 예
+public static int foo(int n) {  
+    return n + n;
+}
+```
+
+그뿐 아니라, 반환값 또한 항상 신경써야 한다.
+
+```java
+// ERROR: 6 => String (X)
+String z = foo(3);
+```
+
+
+
+### 파라미터가 없는 메소드
+
+#### 파라미터가 없는 경우?
+
+메소드의 파라미터는 없을 수도 있다.
+
+```java
+// 파라미터가 없는 메소드 호출 예
+int a = getTen();
+//파라미터가 없는 메소드 정의 예
+public static int getTen() {  
+    return 10;
+}
+```
+
+#### Math.random() 메소드
+
+자바에서 제공하는 Math.random() 메소드는 파라미터가 없는 대표적 예. 해당 메소드는 0.0 이상 1.0 미만의 임의 실수를 반환한다.
+
+```java
+// 파라미터가 없는 메소드 호출 예
+double x = Math.random(); // 0.0 <= x < 1.0
+```
+
+#### 1~10 사이의 정수 구하기
+
+아래는 위 메소드를 사용하여, 1부터 10사이의 임의 정수를 구하는 예다.
+
+```java
+// 0.0 <= r < 10.0
+double r = 10 * Math.random();
+
+// 0, 1, ..., 9 중 하나
+int temp = (int) r;
+
+// 1, 2, ..., 10 중 하나
+int n = temp + 1;
+```
+
+### 리턴값이 없는 메소드
+
+#### void 타입 메소드
+
+메소드에 항상 리턴값이 존재하는 것은 아니다. 반환할 값이 없는 경우, 타입의 자리에 void를 넣어준다.
+
+```java
+// 리턴값이 없는 메소드 호출 예
+printHello();
+// 리턴값이 없는 메소드 정의 예
+public static void printHello() {  
+    System.out.println("Hello");
+    return;
+}
+```
+
+#### return의 생략
+
+반환할 값이 없기 때문에 return 키워드는 생략할 수도 있다.
+
+```java
+public static void printHello() {  		    
+    System.out.println("Hello");
+}
+```
+
+### 메소드의 중첩 호출
+
+#### 메소드 속 메소드 호출
+
+메소드 안에서 또 다시 메소드를 호출할 수 있다.
+
+```java
+// 메소드 호출 예
+threeStar();
+```
+
+`threeStar()` 메소드는, 내부적으로 oneStar()를 3번 호출한다.
+
+```java
+// 메소드 정의 예
+public static void threeStar() {  
+    oneStar();  
+    oneStar();  
+    oneStar();
+}
+
+public static void oneStar() {  
+    System.out.printf("*");
+}
+```
+
+따라서 다음과 같은 결과가 출력됩니다.
+
+```java
+***
+```
+
+### 리뷰: 칼로리 계산
+
+#### 문제
+
+삼겹살 1인분의 무게는 180g이고, 또 삼겹살 1g의 칼로리가 5.179kcal 이다. 이를 참고하여 삼겹살 3인분의 칼로리를 소수점 이하 둘째 자리까지 출력하시오.
+
+#### 출력 예
+
+```
+삼겹살 3인분: 2796.66 kcal
+```
+
+```java
+public class Pork {
+  public static void main(String[] args) {
+    /* 1. 변수를 생성하시오. */
+    int num = 3; // 3인분
+    /* 2. 메소드를 통한 칼로리를 계산하시오. */
+    double result = calculate(num);
+    /* 3. 결과를 출력하시오 */
+      System.out.printf("삼겹살 %d인분: %.2f kcal",num,result);
+  }
+
+  /* 4. 칼로리 계산을 위한 메소드를 작성하시오. */
+    public static double calculate(int n) {
+        int gram = n * 180 // 1인분 => 180g
+        double kcal = gram * 5.179; // 1g => 5.179kcal
+        return kcal;
+    }
+}
+```
+
